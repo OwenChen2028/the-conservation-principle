@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 1
-  minimumSize: 0.5
+  minimumSize: 1
   maximumSize: 10
   scalesHorizontally: 1
   scalesVertically: 1
