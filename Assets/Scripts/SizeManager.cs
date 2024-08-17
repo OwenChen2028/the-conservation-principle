@@ -21,8 +21,7 @@ public class SizeManager : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        startingScale = (Vector2) transform.localScale;
-        transform.localScale *= size;
+        startingScale = new Vector2(1, 1);
 
         if (isStatic)
         {
