@@ -131,8 +131,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2459089664270888115, guid: 3a8806230fcc52e4aae7b3a6b90f28fa, type: 3}
+      propertyPath: size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459089664270888115, guid: 3a8806230fcc52e4aae7b3a6b90f28fa, type: 3}
       propertyPath: maximumSize
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459089664270888115, guid: 3a8806230fcc52e4aae7b3a6b90f28fa, type: 3}
+      propertyPath: scalesVertically
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3214899742607383623, guid: 3a8806230fcc52e4aae7b3a6b90f28fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -350,8 +358,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1325844706340747291, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
+      propertyPath: accel
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325844706340747291, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
       propertyPath: jumpForce
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325844706340747291, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
+      propertyPath: playerMaxSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325844706340747291, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
+      propertyPath: useOldMovement
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5822075755722595269, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
       propertyPath: m_LocalPosition.x
