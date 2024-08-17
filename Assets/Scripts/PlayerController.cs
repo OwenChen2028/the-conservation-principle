@@ -7,10 +7,12 @@ using UnityEngine.Rendering;
 public class PlayerController : MonoBehaviour
 {
     private Vector2 moveDirection;
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float accel;
+
     [SerializeField] private bool useOldMovement;
 
+    [SerializeField] private float moveForce;
+    [SerializeField] private float movementSpeed;
+    
     private bool isGrounded = false;
 
     private bool jumpKeyDown = false;
@@ -173,7 +175,6 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-
         if (useOldMovement)
         {
             rb.velocity = new Vector2(moveDirection.x * movementSpeed / storedSize, rb.velocity.y);
@@ -181,7 +182,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             float maxSpeed = movementSpeed / storedSize;
-            rb.AddForce(accel * moveDirection);
+            rb.AddForce(moveForce * moveDirection);
             if (rb.velocity.x > maxSpeed)
             {
                 rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
@@ -195,8 +196,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && jumpKeyDown)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity / storedSize);
-        }   
-        
+        }
     }
 
     private void HandleAiming()
