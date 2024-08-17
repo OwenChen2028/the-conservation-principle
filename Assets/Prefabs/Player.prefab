@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2384240855216643457}
   - component: {fileID: 6369073946175058791}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,11 +430,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5996915820b4a7343b85ae48febfbdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canScale: 0
   useOldMovement: 0
   moveForce: 20
   movementSpeed: 5
-  jumpVelocity: 15
+  jumpVelocity: 12.5
   storedSize: 1
   sizeDelta: 0.05
-  playerMinSize: 0.5
+  playerMinSize: 0
   playerMaxSize: 10

@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 moveDirection;
 
+    private Vector2 startingScale;
+    [SerializeField] private bool canScale;
+
     [SerializeField] private bool useOldMovement;
 
     [SerializeField] private float moveForce;
@@ -32,7 +35,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float storedSize;
     [SerializeField] private float sizeDelta;
 
-    private Vector2 startingScale;
 
     [SerializeField] private float playerMinSize;
     [SerializeField] private float playerMaxSize;
@@ -61,7 +63,10 @@ public class PlayerController : MonoBehaviour
         HandleAiming();
         HandleShooting();
 
-        transform.localScale = new Vector2(storedSize * startingScale.x, storedSize * startingScale.y);
+        if (canScale)
+        {
+            transform.localScale = new Vector2(storedSize * startingScale.x, storedSize * startingScale.y);
+        }   
     }
 
     private void HandleShootingInput()
@@ -175,28 +180,58 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        if (useOldMovement)
+        if (!canScale)
         {
-            rb.velocity = new Vector2(moveDirection.x * movementSpeed / storedSize, rb.velocity.y);
+            if (useOldMovement)
+            {
+                rb.velocity = new Vector2(moveDirection.x * movementSpeed, rb.velocity.y);
+            }
+            else
+            {
+                float maxSpeed = movementSpeed;
+                rb.AddForce(moveForce * moveDirection);
+                if (rb.velocity.x > maxSpeed)
+                {
+                    rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+                }
+                if (rb.velocity.x < -maxSpeed)
+                {
+                    rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+                }
+            }
+
+            if (isGrounded && jumpKeyDown)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+            }
         }
         else
         {
-            float maxSpeed = movementSpeed / storedSize;
-            rb.AddForce(moveForce * moveDirection);
-            if (rb.velocity.x > maxSpeed)
+            if (useOldMovement)
             {
-                rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+                rb.velocity = new Vector2(moveDirection.x * movementSpeed / storedSize, rb.velocity.y);
             }
-            if (rb.velocity.x < -maxSpeed)
+            else
             {
-                rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+                float maxSpeed = movementSpeed / storedSize;
+                rb.AddForce(moveForce * moveDirection);
+                if (rb.velocity.x > maxSpeed)
+                {
+                    rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+                }
+                if (rb.velocity.x < -maxSpeed)
+                {
+                    rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+                }
+            }
+
+            if (isGrounded && jumpKeyDown)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpVelocity / storedSize);
             }
         }
 
-        if (isGrounded && jumpKeyDown)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpVelocity / storedSize);
-        }
+        
     }
 
     private void HandleAiming()
