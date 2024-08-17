@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
     private Vector2 moveDirection;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float accel;
+    [SerializeField] private bool useOldMovement;
 
     private bool isGrounded = false;
 
@@ -170,12 +173,30 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        rb.velocity = new Vector2(moveDirection.x * movementSpeed / storedSize, rb.velocity.y);
+
+        if (useOldMovement)
+        {
+            rb.velocity = new Vector2(moveDirection.x * movementSpeed / storedSize, rb.velocity.y);
+        }
+        else
+        {
+            float maxSpeed = movementSpeed / storedSize;
+            rb.AddForce(accel * moveDirection);
+            if (rb.velocity.x > maxSpeed)
+            {
+                rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+            }
+            if (rb.velocity.x < -maxSpeed)
+            {
+                rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+            }
+        }
 
         if (isGrounded && jumpKeyDown)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity / storedSize);
-        }
+        }   
+        
     }
 
     private void HandleAiming()
