@@ -15,6 +15,11 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("ControlsScreen");
     }
 
+    public void RollCredits()
+    {
+        SceneManager.LoadScene("CreditsScreen");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -22,6 +27,6 @@ public class MenuButtons : MonoBehaviour
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene("MainMenu")
-;    }
+        SceneManager.LoadScene("MainMenu");
+    }
 }
