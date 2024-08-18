@@ -30,6 +30,6 @@ public class ManageBG : MonoBehaviour
 
     private float oscillate(float time, float speed, float min, float max)
     {
-        return Mathf.Lerp(min, max, (Mathf.Cos(time * speed / Mathf.PI) + 1f)*0.5f);
+        return Mathf.Lerp(min, max, (Mathf.Cos(time * speed / Mathf.PI) + 1f) * 0.5f);
     }
 }
