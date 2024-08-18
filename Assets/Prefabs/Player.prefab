@@ -578,6 +578,7 @@ MonoBehaviour:
   playerMinSize: 0
   playerMaxSize: 10
   gunEffect: {fileID: 0}
+  decelerationSpeed: 0.05
 --- !u!95 &4390273689149471526
 Animator:
   serializedVersion: 5
