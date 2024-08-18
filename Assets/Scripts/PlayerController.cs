@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
 				
 				if (moveDirection.x == 0) 
 				{
-					rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, decelerationSpeed);
+					rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(0, rb.velocity.y), decelerationSpeed);
 				}
 			}
 
@@ -305,13 +305,12 @@ public class PlayerController : MonoBehaviour
 
 	private async void OnTriggerExit2D(Collider2D col)
 	{
- 		if (isGrounded || anim.GetBool("IsGrounded")) {
+ 		if (isGrounded) {
 			await Task.Delay(100);
 			
-			if (isGrounded || anim.GetBool("IsGrounded"))
+			if (isGrounded)
 			{
 				isGrounded = false;
-				anim.SetBool("IsGrounded", false);
 			}
 		}
 	}
