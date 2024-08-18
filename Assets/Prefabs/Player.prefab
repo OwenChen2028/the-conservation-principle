@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2384240855216643457}
   - component: {fileID: 6369073946175058791}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ Transform:
   m_GameObject: {fileID: 3710239997614492261}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 5958531363083009908}
   - component: {fileID: 5671131203171127720}
   - component: {fileID: 1325844706340747291}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7648716055151426842}
@@ -433,8 +433,8 @@ MonoBehaviour:
   useOldMovement: 0
   moveForce: 20
   movementSpeed: 5
-  jumpVelocity: 15
+  jumpVelocity: 12.5
   storedSize: 1
   sizeDelta: 0.05
-  playerMinSize: 0.5
+  playerMinSize: 0
   playerMaxSize: 10
