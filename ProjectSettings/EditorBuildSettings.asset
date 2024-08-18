@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 7bf092c7697e303498a8af631f301955
   - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: f2139b81e4c515a42bf3b2181f85251c
+  - enabled: 1
     path: Assets/Scenes/ControlsScreen.unity
     guid: 24b3adeceae89444d80a15f5f973f02d
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: f2139b81e4c515a42bf3b2181f85251c
+    path: Assets/Scenes/CreditsScreen.unity
+    guid: 2779e1fe772d63f44809a14517cb76ab
   - enabled: 1
     path: Assets/Scenes/Puzzle1.unity
     guid: 53f711bb0227f6b479dcff98666ff8cd
