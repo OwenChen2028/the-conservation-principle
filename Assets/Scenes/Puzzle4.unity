@@ -368,6 +368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BG Overlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3587865144223149811, guid: c7f55f27054270140bf2e90ea21b22e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5978723579854425122, guid: c7f55f27054270140bf2e90ea21b22e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
