@@ -36,11 +36,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float storedSize;
     [SerializeField] private float sizeDelta;
 
-
     [SerializeField] private float playerMinSize;
     [SerializeField] private float playerMaxSize;
 
     private Animator anim;
+    public GameObject gunEffect;
 
     private void Awake()
     {
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         startingScale = new Vector2(1, 1);
 
         anim = GetComponent<Animator>();
+        gunEffect = sizeGun.transform.Find("Gun Effect").gameObject;
     }
 
     private void Update()
@@ -208,6 +209,7 @@ public class PlayerController : MonoBehaviour
     private void HandleShooting() {
         if (!(leftClickDown || rightClickDown))
         {
+            gunEffect.SetActive(false);
             return;
         }
 
@@ -223,7 +225,9 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider)
         {
-            Debug.DrawLine(firePoint.position, hit.point, UnityEngine.Color.red);
+            gunEffect.SetActive(true);
+            gunEffect.GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
+            gunEffect.GetComponent<LineRenderer>().SetPosition(1, hit.point);
 
             SizeManager hitSizeManager = hit.transform.GetComponent<SizeManager>();
             if (hitSizeManager != null)
