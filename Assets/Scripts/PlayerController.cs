@@ -11,15 +11,15 @@ public class PlayerController : MonoBehaviour
 {
 	private Vector2 moveDirection;
 
-	private Vector2 startingScale;
-	[SerializeField] private bool canScale;
+	private float startingMass;
 
 	[SerializeField] private bool useOldMovement;
 
 	[SerializeField] private float moveForce;
 	[SerializeField] private float movementSpeed;
-	
-	private bool isGrounded = false;
+    [SerializeField] private float decelerationSpeed;
+
+    private bool isGrounded = false;
 
 	private bool jumpKeyDown = false;
 	[SerializeField] private float jumpVelocity;
@@ -44,8 +44,6 @@ public class PlayerController : MonoBehaviour
 
 	private Animator anim;
 
-	[SerializeField] private float decelerationSpeed;
-
 	[SerializeField] private int maxBounces;
 
 	private void Awake()
@@ -57,7 +55,7 @@ public class PlayerController : MonoBehaviour
 		sizeGun = transform.Find("Size Gun").gameObject;
 		firePoint = sizeGun.transform.Find("Fire Point");
 
-		startingScale = new Vector2(1, 1);
+		startingMass = rb.mass;
 
 		gunEffect = sizeGun.transform.Find("Gun Effect").gameObject;
 		gunEffect.SetActive(false);
@@ -82,11 +80,6 @@ public class PlayerController : MonoBehaviour
 		HandleMovement();
 		HandleAiming();
 		HandleShooting();
-
-		if (canScale)
-		{
-			transform.localScale = new Vector2(storedSize * startingScale.x, storedSize * startingScale.y);
-		}
 	}
 
 	private void HandleShootingInput()
@@ -151,69 +144,38 @@ public class PlayerController : MonoBehaviour
 			transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
 		}
 
-		if (!canScale)
+		if (useOldMovement)
 		{
-			if (useOldMovement)
-			{
-				rb.velocity = new Vector2(moveDirection.x * movementSpeed, rb.velocity.y);
-			}
-			else
-			{
-				float maxSpeed = movementSpeed;
-				rb.AddForce(moveForce * moveDirection);
-				
-				if (rb.velocity.x > maxSpeed)
-				{
-					rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
-				}
-				if (rb.velocity.x < -maxSpeed)
-				{
-					rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
-				}
-				
-				if (moveDirection.x == 0) 
-				{
-					rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(0, rb.velocity.y), decelerationSpeed);
-				}
-			}
-
-			if (isGrounded && jumpKeyDown)
-			{
-				rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
-				anim.SetTrigger("Jump");
-				
-				isGrounded = false;
-				anim.SetBool("IsGrounded", false);
-			}
+			rb.velocity = new Vector2(moveDirection.x * movementSpeed, rb.velocity.y);
 		}
 		else
 		{
-			if (useOldMovement)
-			{
-				rb.velocity = new Vector2(moveDirection.x * movementSpeed / storedSize, rb.velocity.y);
-			}
-			else
-			{
-				float maxSpeed = movementSpeed / storedSize;
-				rb.AddForce(moveForce * moveDirection);
-				if (rb.velocity.x > maxSpeed)
-				{
-					rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
-				}
-				if (rb.velocity.x < -maxSpeed)
-				{
-					rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
-				}
-			}
-
-			if (isGrounded && jumpKeyDown)
-			{
-				rb.velocity = new Vector2(rb.velocity.x, jumpVelocity / storedSize);
-				anim.SetTrigger("Jump");
+			float maxSpeed = movementSpeed;
+			rb.AddForce(moveForce * moveDirection);
 				
-				isGrounded = false;
-				anim.SetBool("isGrounded", true);
+			if (rb.velocity.x > maxSpeed)
+			{
+				rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
 			}
+			if (rb.velocity.x < -maxSpeed)
+			{
+				rb.velocity = new Vector2(-1 * maxSpeed, rb.velocity.y);
+			}
+				
+			if (moveDirection.x == 0) 
+			{
+				rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(0, rb.velocity.y), decelerationSpeed);
+			}
+		}
+
+		if (isGrounded && jumpKeyDown)
+		{
+			rb.velocity = new Vector2(rb.velocity.x, 0);
+			rb.AddForce(startingMass * new Vector2(0, jumpVelocity), ForceMode2D.Impulse);
+			anim.SetTrigger("Jump");
+				
+			isGrounded = false;
+			anim.SetBool("IsGrounded", false);
 		}
 	}
 
@@ -235,13 +197,14 @@ public class PlayerController : MonoBehaviour
 		}
 
 		RaycastHit2D hit;
+		LayerMask ignorePlayer = ~(1 << 8); // ignores player
 
 		if (transform.localScale.x < 0) {
-			hit = Physics2D.Raycast(firePoint.position, -1 * firePoint.right);
+			hit = Physics2D.Raycast(firePoint.position, -1 * firePoint.right, Mathf.Infinity, ignorePlayer);
 		}
 		else
 		{
-			hit = Physics2D.Raycast(firePoint.position, firePoint.right);
+			hit = Physics2D.Raycast(firePoint.position, firePoint.right, Mathf.Infinity, ignorePlayer);
 		}
 
 		if (hit.collider)

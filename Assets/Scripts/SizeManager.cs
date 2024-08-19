@@ -37,15 +37,24 @@ public class SizeManager : MonoBehaviour
     {
         if (scalesHorizontally && scalesVertically)
         {
-            transform.localScale = new Vector2(size * startingScale.x, size * startingScale.y);
+            transform.localScale = new Vector2(
+                size * startingScale.x * Mathf.Sign(transform.localScale.x), 
+                size * startingScale.y * Mathf.Sign(transform.localScale.y)
+            );
         }
         else if (scalesHorizontally)
         {
-            transform.localScale = new Vector2(size * startingScale.x, startingScale.y);
+            transform.localScale = new Vector2(
+                size * startingScale.x * Mathf.Sign(transform.localScale.x), 
+                startingScale.y * Mathf.Sign(transform.localScale.y)
+            );
         }
         else if (scalesVertically)
         {
-            transform.localScale = new Vector2(startingScale.x, size * startingScale.y);
+            transform.localScale = new Vector2(
+                startingScale.x * Mathf.Sign(transform.localScale.x), 
+                size * startingScale.y * Mathf.Sign(transform.localScale.y)
+            );
         }
     }
 

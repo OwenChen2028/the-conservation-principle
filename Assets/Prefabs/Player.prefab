@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2384240855216643457}
   - component: {fileID: 6369073946175058791}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,8 +395,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.1863166
-        value: 0.14462963
+        time: 0.19222501
+        value: 0.12375739
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -460,7 +460,8 @@ GameObject:
   - component: {fileID: 5671131203171127720}
   - component: {fileID: 1325844706340747291}
   - component: {fileID: 4390273689149471526}
-  m_Layer: 2
+  - component: {fileID: 6860252177760434436}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -569,17 +570,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5996915820b4a7343b85ae48febfbdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canScale: 0
   useOldMovement: 0
-  moveForce: 50
+  moveForce: 100
   movementSpeed: 5
+  decelerationSpeed: 0.05
   jumpVelocity: 12.5
   gunEffect: {fileID: 7305398369304742020}
   storedSize: 1
   sizeDelta: 0.05
   playerMinSize: 0
   playerMaxSize: 10
-  decelerationSpeed: 0.05
   maxBounces: 10
 --- !u!95 &4390273689149471526
 Animator:
@@ -602,3 +602,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6860252177760434436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252696366499310172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7924116771db04a90745b54608462f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 1
+  minimumSize: 0.75
+  maximumSize: 10
+  scalesHorizontally: 1
+  scalesVertically: 1
+  isStatic: 0
