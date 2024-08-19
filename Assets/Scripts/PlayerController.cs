@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
 {
 	private Vector2 moveDirection;
 
-	private float startingMass;
+	private float startingActualMass;
 
 	[SerializeField] private bool useOldMovement;
 
@@ -25,10 +26,14 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float jumpVelocity;
 
 	private Rigidbody2D rb;
+    private Animator anim;
 
-	private GameObject sizeGun;
+	private GameObject playerUI;
+	private TMP_Text massText; 
+
+    private GameObject sizeGun;
 	private Transform firePoint;
-    public GameObject gunEffect;
+    private GameObject gunEffect;
 
     private Camera cam;
 	private Vector2 mouseWorldPos;
@@ -42,8 +47,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float playerMinSize;
 	[SerializeField] private float playerMaxSize;
 
-	private Animator anim;
-
 	[SerializeField] private int maxBounces;
 
 	private void Awake()
@@ -55,11 +58,14 @@ public class PlayerController : MonoBehaviour
 		sizeGun = transform.Find("Size Gun").gameObject;
 		firePoint = sizeGun.transform.Find("Fire Point");
 
-		startingMass = rb.mass;
+		startingActualMass = rb.mass;
 
 		gunEffect = sizeGun.transform.Find("Gun Effect").gameObject;
 		gunEffect.SetActive(false);
-	}
+
+		playerUI = transform.Find("Player UI").gameObject;
+		massText = playerUI.transform.Find("Mass Text").GetComponent<TMP_Text>();
+    }
 
 	private void Update()
 	{
@@ -72,7 +78,15 @@ public class PlayerController : MonoBehaviour
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
-        gunEffect.GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
+		gunEffect.GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
+
+		float massPercent = storedSize / playerMaxSize * 100;
+		massText.text = (Mathf.Round(massPercent)).ToString() + "%";
+		
+		playerUI.transform.localScale = new Vector2(
+			Mathf.Abs(playerUI.transform.localScale.x) * Mathf.Sign(transform.localScale.x),
+			playerUI.transform.localScale.y
+		);
     }
 
 	private void FixedUpdate()
@@ -171,7 +185,7 @@ public class PlayerController : MonoBehaviour
 		if (isGrounded && jumpKeyDown)
 		{
 			rb.velocity = new Vector2(rb.velocity.x, 0);
-			rb.AddForce(startingMass * new Vector2(0, jumpVelocity), ForceMode2D.Impulse);
+			rb.AddForce(startingActualMass * new Vector2(0, jumpVelocity), ForceMode2D.Impulse);
 			anim.SetTrigger("Jump");
 				
 			isGrounded = false;
