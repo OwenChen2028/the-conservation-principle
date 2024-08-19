@@ -1660,10 +1660,6 @@ PrefabInstance:
       propertyPath: storedSize
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2365507771387431336, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5822075755722595269, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -1703,10 +1699,6 @@ PrefabInstance:
     - target: {fileID: 5822075755722595269, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287185558860236832, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8252696366499310172, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
       propertyPath: m_Name
