@@ -241,6 +241,19 @@ public class PlayerController : MonoBehaviour
 		if (hit.collider)
 		{
 			gunEffect.SetActive(true);
+
+			if (leftClickDown)
+			{
+                gunEffect.GetComponent<LineRenderer>().startColor = UnityEngine.Color.magenta;
+                gunEffect.GetComponent<LineRenderer>().endColor = UnityEngine.Color.red;
+            }
+			else if (rightClickDown)
+			{
+                gunEffect.GetComponent<LineRenderer>().startColor = UnityEngine.Color.magenta;
+                gunEffect.GetComponent<LineRenderer>().endColor = UnityEngine.Color.blue;
+
+            }
+
 			gunEffect.GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
 			gunEffect.GetComponent<LineRenderer>().SetPosition(1, hit.point);
 
