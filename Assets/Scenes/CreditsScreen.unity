@@ -575,22 +575,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Owen Chen - Programming, Design (Levels)
-
-    Ryan Peterson - Art (Sprites),
-    Programming
-
-    Axel O''Brien - Programming, Design (Levels)
-
-    Tanner Hume
-    - Design (Mechanics), Programming
-
-    Lia Hansen - Art (Backgrounds)
-
-    Owen
-    Gallagher - Music, SFX
-
-'
+  m_text: "Owen Chen - Programming, Design (Levels)\r\nRyan Peterson - Art (Sprites),
+    Programming\r\nAxel O'Brien - Programming, Design (Levels)\r\nTanner Hume - Programming,
+    Design (Mechanics)\r\nLia Hansen - Art (Backgrounds)\r\nOwen Gallagher - Music,
+    SFX\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

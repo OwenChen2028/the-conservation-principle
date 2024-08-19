@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,9 @@ public class PauseMenu : MonoBehaviour
 {
     private bool paused;
     [SerializeField] private GameObject menu;
+
+    public GameObject hintsText;
+    public GameObject hintsButton;
 
     private void Update()
     {
@@ -44,5 +48,18 @@ public class PauseMenu : MonoBehaviour
     public void ReturnToSelect()
     {
         SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void RevealHints()
+    {
+        for (int i = 0; i < LevelManager.levels.Length; i++)
+        {
+            if (LevelManager.levels[i] == SceneManager.GetActiveScene().name)
+            {
+                hintsText.GetComponent<TMP_Text>().text = LevelManager.hints[i];
+            }
+        }
+        hintsText.SetActive(true);
+        hintsButton.SetActive(false);
     }
 }
