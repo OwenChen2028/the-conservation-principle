@@ -9,10 +9,14 @@ using UnityEngine.Events;
 public class ButtonScript : MonoBehaviour
 {
 	private Rigidbody2D rb;
+
 	[SerializeField] private UnityEvent<bool> activatorFunction;
+
 	[SerializeField] private float minimumMassToActivate;
+
 	[SerializeField] private Vector3 upPosition;	
 	[SerializeField] private Vector3 downPosition;	
+
 	[SerializeField] private float lerpConstant;
 	private bool active = false;
 	private List<Rigidbody2D> rigidBodies;
@@ -68,7 +72,8 @@ public class ButtonScript : MonoBehaviour
 			activatorFunction.Invoke(true);
 			active = true;
 			rb.transform.localPosition = Vector3.Lerp(rb.transform.localPosition, downPosition, lerpConstant);
-		} else 
+		}
+		else 
 		{
 			activatorFunction.Invoke(false);
 			active = false;

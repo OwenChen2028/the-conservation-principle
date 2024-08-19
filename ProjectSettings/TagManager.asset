@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HorizMirror
+  - VertMirror
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
+  - Ignore Peers
+  - Player
   - 
   - 
   - 
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1768118411
+    locked: 0
+  - name: UI
+    uniqueID: 274238443
     locked: 0
