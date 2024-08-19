@@ -29,8 +29,6 @@ public class ButtonScript : MonoBehaviour
 		Rigidbody2D otherRb = other.GetComponent<Rigidbody2D>();
 		
 		if (otherRb != null && otherRb.mass >= minimumMassToActivate) {
-			Debug.Log("yes");
-
             active = true;
             activatorFunction.Invoke(true);
 		}
@@ -41,8 +39,6 @@ public class ButtonScript : MonoBehaviour
 		Rigidbody2D otherRb = other.GetComponent<Rigidbody2D>();
 		
 		if (otherRb != null && otherRb.mass >= minimumMassToActivate) {
-			Debug.Log("no");
-
             active = false;
             activatorFunction.Invoke(false);
 		}
