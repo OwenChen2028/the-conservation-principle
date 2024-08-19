@@ -27,8 +27,9 @@ public class PlayerController : MonoBehaviour
 
 	private GameObject sizeGun;
 	private Transform firePoint;
+    public GameObject gunEffect;
 
-	private Camera cam;
+    private Camera cam;
 	private Vector2 mouseWorldPos;
 
 	private bool leftClickDown;
@@ -41,22 +42,22 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float playerMaxSize;
 
 	private Animator anim;
-	public GameObject gunEffect;
 
 	[SerializeField] private float decelerationSpeed;
 
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		cam = Camera.main;
+        anim = GetComponent<Animator>();
+        cam = Camera.main;
 
 		sizeGun = transform.Find("Size Gun").gameObject;
 		firePoint = sizeGun.transform.Find("Fire Point");
 
 		startingScale = new Vector2(1, 1);
 
-		anim = GetComponent<Animator>();
 		gunEffect = sizeGun.transform.Find("Gun Effect").gameObject;
+		gunEffect.SetActive(false);
 	}
 
 	private void Update()
@@ -327,5 +328,5 @@ public class PlayerController : MonoBehaviour
 				isGrounded = false;
 			}
 		}
-	}
+    }
 }
