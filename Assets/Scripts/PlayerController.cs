@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using static UnityEditorInternal.VersionControl.ListControl;
 
 public class PlayerController : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class PlayerController : MonoBehaviour
 	private Animator anim;
 
 	[SerializeField] private float decelerationSpeed;
+
+	[SerializeField] private int maxBounces;
 
 	private void Awake()
 	{
@@ -257,7 +260,44 @@ public class PlayerController : MonoBehaviour
 
             }
 
-			gunEffect.GetComponent<LineRenderer>().SetPosition(1, hit.point);
+			gunEffect.GetComponent<LineRenderer>().positionCount = 2;
+            gunEffect.GetComponent<LineRenderer>().SetPosition(1, hit.point);
+
+			Vector2 startDirection = firePoint.right;
+
+			for (int i = 0; i < maxBounces; i++)
+			{
+				if (hit.collider.CompareTag("HorizMirror") || hit.collider.CompareTag("VertMirror"))
+				{
+					Vector2 reflectDirection;
+
+					if (hit.collider.CompareTag("HorizMirror"))
+					{
+						reflectDirection = new Vector2(startDirection.x, -1 * startDirection.y);
+					}
+					else
+					{
+						reflectDirection = new Vector2(-1 * startDirection.x, startDirection.y);
+					}
+
+					if (transform.localScale.x < 0)
+					{
+						hit = Physics2D.Raycast(hit.point - 0.1f * reflectDirection, -1 * reflectDirection);
+					}
+					else
+					{
+						hit = Physics2D.Raycast(hit.point + 0.1f * reflectDirection, reflectDirection);
+					}
+
+					if (hit.collider)
+					{
+						startDirection = reflectDirection;
+
+						gunEffect.GetComponent<LineRenderer>().positionCount += 1;
+						gunEffect.GetComponent<LineRenderer>().SetPosition(gunEffect.GetComponent<LineRenderer>().positionCount - 1 , hit.point);
+					}
+				}
+			}
 
 			SizeManager hitSizeManager = hit.transform.GetComponent<SizeManager>();
 			if (hitSizeManager != null)
