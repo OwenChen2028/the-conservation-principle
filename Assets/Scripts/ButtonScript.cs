@@ -14,11 +14,12 @@ public class ButtonScript : MonoBehaviour
 	[SerializeField] private Vector3 upPosition;	
 	[SerializeField] private Vector3 downPosition;	
 	[SerializeField] private float lerpConstant;
-	[SerializeField] private bool active = false;
-	[SerializeField] public List<Rigidbody2D> rigidBodies;
+	private bool active = false;
+	private List<Rigidbody2D> rigidBodies;
 	
 	void Awake() {
 		rb = GetComponent<Rigidbody2D>();
+		rigidBodies = new List<Rigidbody2D>();
 	}
 	
 	private void OnTriggerStay2D(Collider2D other) 
