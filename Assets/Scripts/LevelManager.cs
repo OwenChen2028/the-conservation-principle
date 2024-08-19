@@ -15,17 +15,19 @@ public class LevelManager : MonoBehaviour
         "LevelA6",
         "LevelB1",
         "LevelB2",
+        "LevelB3"
     };
 
     public static string[] hints = {
         "Stand on objects while enlarging them to gain height.", 
         "Shrinking objects can make them fit into smaller gaps.",
-        "You can take mass from one object to give it to another.",
+        "You can take mass from one object to give to another.",
         "Enlarging objects can change their center of mass.",
         "Enlarging objects pushes them away from walls.",
         "Take all your mass with you, leave nothing behind.",
         "You can use other objects to hold buttons in place.",
-        "Enlarging an object can make it easier to reach."
+        "Enlarging an object can make it easier to reach.",
+        "Bounce your gun's beam off of mirrors to hit objects."
     };
 
     public static bool[] completed = new bool[levels.Length]; // defaults to false
