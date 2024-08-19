@@ -8,12 +8,17 @@ using UnityEngine.Events;
 public class ButtonScript : MonoBehaviour
 {
 	private Rigidbody2D rb;
+
 	[SerializeField] private UnityEvent<bool> activatorFunction;
+
 	[SerializeField] private float minimumMassToActivate;
+
 	[SerializeField] private Vector3 upPosition;	
 	[SerializeField] private Vector3 downPosition;	
+
 	[SerializeField] private float lerpConstant;
-	[SerializeField] private bool active = false;
+
+	private bool active = false;
 	
 	void Awake() {
 		rb = GetComponent<Rigidbody2D>();
@@ -24,8 +29,8 @@ public class ButtonScript : MonoBehaviour
 		Rigidbody2D otherRb = other.GetComponent<Rigidbody2D>();
 		
 		if (otherRb != null && otherRb.mass >= minimumMassToActivate) {
-			activatorFunction.Invoke(true);
-			active = true;
+            active = true;
+            activatorFunction.Invoke(true);
 		}
 	}
 	
@@ -34,8 +39,8 @@ public class ButtonScript : MonoBehaviour
 		Rigidbody2D otherRb = other.GetComponent<Rigidbody2D>();
 		
 		if (otherRb != null && otherRb.mass >= minimumMassToActivate) {
-			activatorFunction.Invoke(false);
-			active = false;
+            active = false;
+            activatorFunction.Invoke(false);
 		}
 	}
 	
@@ -44,7 +49,8 @@ public class ButtonScript : MonoBehaviour
 		if (active) 
 		{
 			rb.transform.localPosition = Vector3.Lerp(rb.transform.localPosition, downPosition, lerpConstant);
-		} else 
+		}
+		else 
 		{
 			rb.transform.localPosition = Vector3.Lerp(rb.transform.localPosition, upPosition, lerpConstant);
 		}
