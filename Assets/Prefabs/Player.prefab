@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1768118411
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 21502a1bf01b84230913fbc44e0b0250, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -383,7 +383,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1768118411
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -573,7 +573,7 @@ MonoBehaviour:
   moveForce: 20
   movementSpeed: 5
   jumpVelocity: 12.5
-  storedSize: 1
+  storedSize: 1.5
   sizeDelta: 0.05
   playerMinSize: 0
   playerMaxSize: 10

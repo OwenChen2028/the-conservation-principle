@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToSelect()
     {
+        UnpauseGame();
         SceneManager.LoadScene("LevelSelect");
     }
 
