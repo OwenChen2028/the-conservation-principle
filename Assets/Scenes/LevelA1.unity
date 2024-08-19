@@ -1541,7 +1541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525417220808664235, guid: 3a8806230fcc52e4aae7b3a6b90f28fa, type: 3}
       propertyPath: m_Name
-      value: Scalable
+      value: Scalable1
       objectReference: {fileID: 0}
     - target: {fileID: 8627615542504120831, guid: 3a8806230fcc52e4aae7b3a6b90f28fa, type: 3}
       propertyPath: m_Sprite
@@ -1804,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940365011966596954, guid: c467ba97725f27141b940979ad40e65e, type: 3}
       propertyPath: m_Name
-      value: Objective
+      value: Goal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1892,8 +1892,8 @@ SceneRoots:
   - {fileID: 406873829}
   - {fileID: 1726365119}
   - {fileID: 1218872637}
+  - {fileID: 1599150497738625826}
   - {fileID: 290993891}
   - {fileID: 1523380478}
-  - {fileID: 1599150497738625826}
   - {fileID: 2098910046}
   - {fileID: 3137930701295173537}
