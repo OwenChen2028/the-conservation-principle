@@ -9,6 +9,13 @@ public class WinCondition : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            for (int i = 0; i < LevelManager.levels.Length; i++)
+            {
+                if (LevelManager.levels[i] == SceneManager.GetActiveScene().name)
+                {
+                    LevelManager.completed[i] = true;
+                }
+            }
             SceneManager.LoadScene("LevelSelect");
         }
     }

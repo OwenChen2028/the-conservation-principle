@@ -23,4 +23,6 @@ public class LevelManager : MonoBehaviour
         "Enlarging objects pushes them away from walls.",
         "Take all the mass you can get, leave nothing behind!"
     };
+
+    public static bool[] completed = new bool[6]; // defaults to false
 }
