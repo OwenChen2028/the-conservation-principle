@@ -69,7 +69,9 @@ public class PlayerController : MonoBehaviour
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
-	}
+
+        gunEffect.GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
+    }
 
 	private void FixedUpdate()
 	{
@@ -254,7 +256,6 @@ public class PlayerController : MonoBehaviour
 
             }
 
-			gunEffect.GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
 			gunEffect.GetComponent<LineRenderer>().SetPosition(1, hit.point);
 
 			SizeManager hitSizeManager = hit.transform.GetComponent<SizeManager>();
