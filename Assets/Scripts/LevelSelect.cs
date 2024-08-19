@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
-    public void LoadPuzzle(int index)
+    public void LoadPuzzle(string sceneName)
     {
-        SceneManager.LoadScene("Puzzle" + index);
+        SceneManager.LoadScene(sceneName);
     }
 }

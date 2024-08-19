@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 736856494f3c74b9e9ac7fb8d35929c3
+guid: bdcd4f09400d2434393b77ab4e8632af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 90
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,15 +93,28 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tileset3_0
+      name: Tileset4_0
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 96
         width: 96
         height: 96
       alignment: 0
@@ -111,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 049a5313d471e49709e7764bb29eec60
-      internalID: 1946073806
+      spriteID: 7bf7779066c8f4d3db6ff0fa10bfb286
+      internalID: 1627091301
       vertices: []
       indices: 
       edges: []
@@ -128,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tileset3_0: 1946073806
+      Tileset4_0: 1627091301
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
