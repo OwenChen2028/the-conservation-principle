@@ -15,7 +15,8 @@ public class LevelManager : MonoBehaviour
         "LevelA6",
         "LevelB1",
         "LevelB2",
-        "LevelB3"
+        "LevelB3",
+        "LevelB4"
     };
 
     public static string[] hints = {
@@ -27,7 +28,8 @@ public class LevelManager : MonoBehaviour
         "Take all your mass with you, leave nothing behind.",
         "You can use other objects to hold buttons in place.",
         "Enlarging an object can make it easier to reach.",
-        "Bounce your gun's beam off of mirrors to hit objects."
+        "You can bounce your gun's beam off of mirrors.",
+        "Use the mirror to shoot yourself and see what happens."
     };
 
     public static bool[] completed = new bool[levels.Length]; // defaults to false
