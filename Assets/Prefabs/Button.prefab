@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854508383805877465}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 0.65, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -606145047
+  m_SortingLayer: 2
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: b3d0511c44e67c24986ced56bbf09e0b, type: 3}
   m_Color: {r: 0.899371, g: 0.20080289, b: 0.20080289, a: 1}
   m_FlipX: 0
@@ -97,7 +97,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 854508383805877465}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 367596166e411b346b8cd8b615fc5204, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -123,11 +123,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.4323845, y: -0.537163}
-  - {x: -0.4453074, y: -0.5176294}
-  - {x: -0.32010776, y: 0.032758713}
-  - {x: 0.3135033, y: 0.02929926}
-  - {x: 0.44911185, y: -0.52353024}
+  - {x: -0.5004731, y: -0.5071535}
+  - {x: -0.301613, y: 0.4739989}
+  - {x: 0.3131541, y: 0.475778}
+  - {x: 0.4999166, y: -0.5056294}
+  - {x: 0.50094706, y: -0.49558848}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 854508383805877465}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 367596166e411b346b8cd8b615fc5204, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DoorScript, Assembly-CSharp
-        m_MethodName: Move
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -202,13 +202,12 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   minimumMassToActivate: 0
   upPosition: {x: 0, y: -0.2, z: 0}
-  downPosition: {x: 0, y: -0.35, z: 0}
+  downPosition: {x: 0, y: -0.3, z: 0}
   lerpConstant: 0.1
-  active: 0
 --- !u!50 &6039191534863919073
 Rigidbody2D:
   serializedVersion: 4
@@ -261,8 +260,8 @@ Transform:
   m_GameObject: {fileID: 7249838833964691084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalPosition: {x: 8.514, y: -1, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2591115849367091138}
@@ -340,8 +339,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -606145047
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: b3d0511c44e67c24986ced56bbf09e0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -363,7 +362,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 8392887602255621763}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 367596166e411b346b8cd8b615fc5204, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -398,11 +397,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32659253, y: 0.5002804}
-      - {x: -0.3044252, y: 0.4969467}
-      - {x: -0.35827252, y: 0.25666344}
-      - {x: -0.5, y: -0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.3896141, y: 0.15444088}
+    - - {x: 0.32527265, y: 0.49894798}
+      - {x: -0.32348248, y: 0.49784493}
+      - {x: -0.38403532, y: 0.25498825}
+      - {x: -0.5879626, y: -0.5079408}
+      - {x: -0.2839911, y: -0.5079411}
+      - {x: 0.589067, y: -0.5021678}
+      - {x: 0.40550566, y: 0.17155933}
+      - {x: 0.39632177, y: 0.098090366}
   m_UseDelaunayMesh: 0
