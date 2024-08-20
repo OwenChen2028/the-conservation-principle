@@ -57,7 +57,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (LevelManager.levels[i] == SceneManager.GetActiveScene().name)
             {
-                hintsText.GetComponent<TMP_Text>().text = "Hint: " + LevelManager.hints[i];
+                hintsText.GetComponent<TMP_Text>().text = LevelManager.hints[i];
             }
         }
         hintsText.SetActive(true);

@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
 		"You can use other objects to hold buttons in place.",
 		"Enlarging an object can make it easier to reach.",
 		"You can bounce your gun's beam off of mirrors.",
-		"Use the mirror to shoot yourself and see what happens.",
+		"Shoot yourself using the mirror and see what happens.",
 		"Larger buttons require heavier objects to press.",
 		"Don't be afraid to point lasers at yourself.",
 	};
