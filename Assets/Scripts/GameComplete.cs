@@ -9,7 +9,7 @@ public class GameComplete : MonoBehaviour
     {
         for (int i = 0; i < LevelManager.completed.Length; i++)
         {
-            if (LevelManager.completed[i])
+            if (!LevelManager.completed[i])
             {
                 return;
             }

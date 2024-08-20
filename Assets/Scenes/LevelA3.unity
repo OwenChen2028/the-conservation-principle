@@ -3709,7 +3709,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1325844706340747291, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
       propertyPath: storedSize
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1325844706340747291, guid: 5158952c9a45c6047b3a6519a7186fac, type: 3}
       propertyPath: playerMinSize
