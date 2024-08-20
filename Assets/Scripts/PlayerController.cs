@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
 		{
 			jumpKeyDown = true;
 		}
-		if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+		if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
 		{
 			jumpKeyDown = false;
 		}
