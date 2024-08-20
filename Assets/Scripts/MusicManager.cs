@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
     private AudioSource Player1;
     private AudioSource Player2;
 
-    [SerializeField] AudioClip[] songList; //0 is Waltz, 1 is Pulsar, 2 is Deep
+    [SerializeField] AudioClip[] songList; // 0 is Waltz, 1 is Pulsar, 2 is Deep
 
     [SerializeField] float maxVolume;
     [SerializeField] float fadeSpeed;

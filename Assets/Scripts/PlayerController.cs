@@ -83,8 +83,7 @@ public class PlayerController : MonoBehaviour
 		HandleMovementInput();
 		HandleAimingInput();
 		HandleShootingInput();
-        handleSoundEffects();
-
+        HandleSoundEffects();
 
         if (Input.GetKeyDown(KeyCode.R))
 		{
@@ -131,7 +130,6 @@ public class PlayerController : MonoBehaviour
 		{
 			rightClickDown = false;
 		}
-
 	}
 
 	private void HandleMovementInput()
@@ -205,7 +203,12 @@ public class PlayerController : MonoBehaviour
 				
 			isGrounded = false;
 			anim.SetBool("IsGrounded", false);
-		}
+
+			/*
+            jumpAudioSource.volume = soundEffectVolume;
+            jumpAudioSource.Play();
+			*/
+        }
 	}
 
 	private void HandleAiming()
@@ -345,9 +348,14 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	private void handleSoundEffects()
+	private void HandleSoundEffects()
 	{
-		if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
 			makeBigAudioSource.volume = soundEffectVolume;
 			makeBigAudioSource.Play();
@@ -364,11 +372,6 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.Mouse1))
 		{
 			makeSmallAudioSource.volume = 0;
-		}
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-            jumpAudioSource.volume = soundEffectVolume;
-            jumpAudioSource.Play();
 		}
 
     }
