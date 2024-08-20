@@ -271,7 +271,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 8500927163482719171}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 367596166e411b346b8cd8b615fc5204, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -312,7 +312,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 8500927163482719171}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 367596166e411b346b8cd8b615fc5204, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
