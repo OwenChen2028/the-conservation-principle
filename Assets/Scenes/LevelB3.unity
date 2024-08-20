@@ -465,14 +465,6 @@ PrefabInstance:
       propertyPath: activatorFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1258615211}
-    - target: {fileID: 4360305927015267610, guid: 5e295125d97c44242a9e86bf4744fdc1, type: 3}
-      propertyPath: activatorFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MoveDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360305927015267610, guid: 5e295125d97c44242a9e86bf4744fdc1, type: 3}
-      propertyPath: activatorFunction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorScript, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7249838833964691084, guid: 5e295125d97c44242a9e86bf4744fdc1, type: 3}
       propertyPath: m_Name
       value: Button
