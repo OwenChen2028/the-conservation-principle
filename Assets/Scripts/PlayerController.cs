@@ -367,7 +367,8 @@ public class PlayerController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			jumpAudioSource.Play();
+            jumpAudioSource.volume = soundEffectVolume;
+            jumpAudioSource.Play();
 		}
 
     }
