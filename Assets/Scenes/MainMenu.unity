@@ -561,7 +561,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fffff423ddcfb2c4bb9eb1c17d00c353, type: 3}
   - {fileID: 8300000, guid: b1b303ff3e9d04b4e9807b7634077862, type: 3}
   - {fileID: 8300000, guid: 4ff38823e1939e648a332f4ab17cce80, type: 3}
-  maxVolume: 0.5
+  maxVolume: 0.25
   fadeSpeed: 0.001
 --- !u!1 &1151732472
 GameObject:
