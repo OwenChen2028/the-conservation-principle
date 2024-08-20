@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class GameComplete : MonoBehaviour
 {
-    private void Awake()
-    {
-        for (int i = 0; i < LevelManager.completed.Length; i++)
-        {
-            if (!LevelManager.completed[i])
-            {
-                return;
-            }
-        }
-        GetComponent<TMP_Text>().text = "Congratulations on completing the game!";
-    }
+	[SerializeField] private GameObject[] ConfettiLaunchers;
+	private void Awake()
+	{
+		for (int i = 0; i < LevelManager.completed.Length; i++)
+		{
+			if (!LevelManager.completed[i])
+			{
+				return;
+			}
+		}
+		
+		for (int i = 0; i < ConfettiLaunchers.Length; i++)
+		{
+			ConfettiLaunchers[i].SetActive(true);
+		}
+		
+		GetComponent<TMP_Text>().text = "Congratulations on completing the game!";
+	}
 }
