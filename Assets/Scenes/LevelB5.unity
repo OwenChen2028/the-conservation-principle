@@ -1152,8 +1152,8 @@ Tilemap:
   - first: {x: 12, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 12
-      m_TileSpriteIndex: 18
+      m_TileIndex: 20
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1605,8 +1605,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 87562793d02b14e2e8da4e43f6cd2e73, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 2a93f62075bd345839bea3062163c672, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 6350261e4b13c4a80b27d71a33c96653, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c4dd838a0ef324c87a79287f51b54c86, type: 2}
   - m_RefCount: 7
@@ -1621,7 +1621,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: fbdfb9a1bd87c475ba4acdb15e6e2b51, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 96ff6b68c1a484f2bafdcd98c389ee04, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: c5ce55ee663304cee9bb91e971ee6e0c, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: d76e1f914bb29418a9f9f6ec427e55b7, type: 2}
@@ -1682,15 +1682,15 @@ Tilemap:
     m_Data: {fileID: -2000129063, guid: ee9115de57c704a519837748dca86020, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 730279976, guid: 4213e8e567a2342c583188dfc08ee4e3, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 897564056, guid: 5be114942d31a42fbba8b3824334b318, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -969836540, guid: 4213e8e567a2342c583188dfc08ee4e3, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: -1466550055, guid: bf54276352aa24184814081bd08f0973, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 210709081, guid: 4213e8e567a2342c583188dfc08ee4e3, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: -1934225690, guid: ee9115de57c704a519837748dca86020, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1794221441, guid: 4213e8e567a2342c583188dfc08ee4e3, type: 3}
