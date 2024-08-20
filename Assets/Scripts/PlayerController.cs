@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 	private bool leftClickDown;
 	private bool rightClickDown;
 
+
 	[SerializeField] private float storedSize;
 	[SerializeField] private float sizeDelta;
 
@@ -48,6 +49,12 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float playerMaxSize;
 
 	[SerializeField] private int maxBounces;
+
+	[SerializeField] private float soundEffectVolume;
+
+	private AudioSource makeBigAudioSource;
+	private AudioSource makeSmallAudioSource;
+	private AudioSource jumpAudioSource;
 
 	private void Awake()
 	{
@@ -57,6 +64,10 @@ public class PlayerController : MonoBehaviour
 
 		sizeGun = transform.Find("Size Gun").gameObject;
 		firePoint = sizeGun.transform.Find("Fire Point");
+
+		makeBigAudioSource = transform.Find("MakeBigSound").GetComponent<AudioSource>();
+		makeSmallAudioSource = transform.Find("MakeSmallSound").GetComponent<AudioSource>();
+		jumpAudioSource = transform.Find("JumpSound").GetComponentInChildren<AudioSource>();
 
 		startingActualMass = rb.mass;
 
@@ -72,8 +83,10 @@ public class PlayerController : MonoBehaviour
 		HandleMovementInput();
 		HandleAimingInput();
 		HandleShootingInput();
+        handleSoundEffects();
 
-		if (Input.GetKeyDown(KeyCode.R))
+
+        if (Input.GetKeyDown(KeyCode.R))
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
@@ -96,6 +109,7 @@ public class PlayerController : MonoBehaviour
 		HandleShooting();
 	}
 
+
 	private void HandleShootingInput()
 	{
 		if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -117,6 +131,7 @@ public class PlayerController : MonoBehaviour
 		{
 			rightClickDown = false;
 		}
+
 	}
 
 	private void HandleMovementInput()
@@ -229,6 +244,7 @@ public class PlayerController : MonoBehaviour
 			{
                 gunEffect.GetComponent<LineRenderer>().startColor = UnityEngine.Color.magenta;
                 gunEffect.GetComponent<LineRenderer>().endColor = UnityEngine.Color.red;
+
             }
 			else if (rightClickDown)
 			{
@@ -328,6 +344,33 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 	}
+
+	private void handleSoundEffects()
+	{
+		if (Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			makeBigAudioSource.volume = soundEffectVolume;
+			makeBigAudioSource.Play();
+		}
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+			makeSmallAudioSource.volume = soundEffectVolume;
+            makeSmallAudioSource.Play();
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+			makeBigAudioSource.volume = 0;
+        }
+		if (Input.GetKeyUp(KeyCode.Mouse1))
+		{
+			makeSmallAudioSource.volume = 0;
+		}
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			jumpAudioSource.Play();
+		}
+
+    }
 
 	private void OnTriggerStay2D(Collider2D col)
 	{
