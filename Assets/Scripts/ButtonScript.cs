@@ -38,13 +38,12 @@ public class ButtonScript : MonoBehaviour
 		}
 	}
 	
-	private async void OnTriggerExit2D(Collider2D other) 
+	private void OnTriggerExit2D(Collider2D other) 
 	{
 		Rigidbody2D otherRb = other.GetComponent<Rigidbody2D>();
 		
 		if (rigidBodies.Contains(otherRb)) 
 		{
-			await Task.Delay(300);
 			rigidBodies.Remove(otherRb);
 		}
 	}
@@ -56,14 +55,16 @@ public class ButtonScript : MonoBehaviour
 		
 		active = false;
 		
-		foreach (Rigidbody2D largeRb in rigidBodies)
+		for (int i = 0; i < rigidBodies.Count; i++)
 		{
+			Rigidbody2D largeRb = rigidBodies[i];
 			if (largeRb != null && largeRb.mass >= minimumMassToActivate)
 			{
 				active = true;
 			} else 
 			{
 				rigidBodies.Remove(largeRb);
+				i--;
 			}
 		}
 		
