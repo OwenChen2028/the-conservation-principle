@@ -6,7 +6,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using static UnityEditorInternal.VersionControl.ListControl;
 
 public class PlayerController : MonoBehaviour
 {

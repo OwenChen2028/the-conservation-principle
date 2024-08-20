@@ -444,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360305927015267610, guid: 5e295125d97c44242a9e86bf4744fdc1, type: 3}
       propertyPath: minimumMassToActivate
-      value: 5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4360305927015267610, guid: 5e295125d97c44242a9e86bf4744fdc1, type: 3}
       propertyPath: activatorFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -525,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360305927015267610, guid: 5e295125d97c44242a9e86bf4744fdc1, type: 3}
       propertyPath: minimumMassToActivate
-      value: 5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4360305927015267610, guid: 5e295125d97c44242a9e86bf4744fdc1, type: 3}
       propertyPath: activatorFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
