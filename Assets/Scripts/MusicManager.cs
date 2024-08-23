@@ -84,19 +84,18 @@ public class MusicManager : MonoBehaviour
         {
             Player1.volume = 0;
         }
-        if (Player2.volume > maxVolume)
+        if (Player1.volume > maxVolume)
         {
-            Player2.volume = maxVolume;
+            Player1.volume = maxVolume;
         }
         if (Player2.volume < 0)
         {
             Player2.volume = 0;
         }
-        if (Player1.volume > maxVolume)
+        if (Player2.volume > maxVolume)
         {
-            Player1.volume = maxVolume;
+            Player2.volume = maxVolume;
         }
-
     }
     private void Crossfade()
     {
@@ -133,7 +132,7 @@ public class MusicManager : MonoBehaviour
     private void DetermineSong()
     {
         string room = currentScene.name;
-        //0 for menus, 1 for levels 1-5, 2 for levels 6 
+        // 0 for menus, 1 for levels 1-5, 2 for levels 6 
         switch(room)
         {
             case ("MainMenu"):
