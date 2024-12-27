@@ -4,4 +4,4 @@ Big Green Games consists of: Owen Chen, Ryan Peterson, Axel O'Brien, Tanner Hume
 
 The project should be built using Unity version 2022.3.34f1 (LTS)
 
-The game is available to play at: https://ilikeovensalot.itch.io/the-conservation-principle
+The game is available to play at: [https://ilikeovensalot.itch.io/the-conservation-principle](https://elephantfanatic.itch.io/the-conservation-principle)
