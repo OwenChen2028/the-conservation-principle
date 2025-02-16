@@ -1,2 +1,2 @@
-*.shaderlab linguist-detectable=false
-*.hlsl linguist-detectable=false
+*.shader linguist-detectable=false
+*.cginc linguist-detectable=false
