@@ -1,5 +1,3 @@
-The Conservation Principle is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1)
-
 Credits:
 - Owen Chen - Programming, Design (Levels)
 - Ryan Peterson - Art (Sprites), Programming
