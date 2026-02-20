@@ -8,7 +8,7 @@ Credits:
 
 The project should be built using Unity version 2022.3.34f1 (LTS)
 
-The game is available to play at: https://elephantfanatic.itch.io/the-conservation-principle
+The game is available to play at: https://mrmacropod.itch.io/the-conservation-principle
 
 Description: The core gimmick of this game is that certain objects, including the player themselves, have a "size" property that can be altered by the player's size gun. The size of an object determines how it interacts with the world, with larger objects being heavier and having greater inertia. Every scalable object has a SizeManager script attached that determines if it is movable, which directions it can be scaled in, and how large or small it can become.
 
